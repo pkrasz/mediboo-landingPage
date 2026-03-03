@@ -6,7 +6,6 @@ import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/SectionTitle";
 import { trackEvent } from "@/lib/analytics";
 import { WaitlistModal } from "@/components/WaitlistModal";
-import heroImage from "../../public/img/hero.png";
 
 const featureCards = [
   {
@@ -55,7 +54,7 @@ export function LandingPage() {
   return (
     <>
       <Container className="py-10 md:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,42rem)_1fr] lg:items-center lg:gap-16 xl:gap-20">
           <div className="max-w-2xl">
             <div className="inline-flex rounded-sm bg-secondary px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               Trusted, gentle pediatric routines
@@ -74,29 +73,32 @@ export function LandingPage() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => trackEvent("app_store_click", { destination: "app_store" })}
-                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-accent px-5 py-3 text-left text-white shadow-card hover:opacity-90"
+                className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
+                aria-label="Download on the App Store"
               >
-                <AppleIcon />
-                <span>
-                  <span className="block text-[11px] uppercase tracking-[0.16em] text-white/85">
-                    Download on the
-                  </span>
-                  <span className="block text-base font-semibold">App Store</span>
-                </span>
+                <Image
+                  src="/badges/DownloadontheAppStore_US-UK.svg"
+                  alt="Download on the App Store"
+                  width={120}
+                  height={40}
+                  className="h-auto w-[160px] rounded-md sm:w-[172px]"
+                  priority
+                />
               </a>
 
               <button
                 type="button"
                 onClick={openModal}
-                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md bg-secondary px-5 py-3 text-left text-primary shadow-card hover:opacity-90"
+                className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
+                aria-label="Join Google Play waitlist"
               >
-                <PlayIcon />
-                <span>
-                  <span className="block text-[11px] uppercase tracking-[0.16em] text-primary/70">
-                    Android
-                  </span>
-                  <span className="block text-base font-semibold">Join Google Play waitlist</span>
-                </span>
+                <Image
+                  src="/badges/GetItOnGooglePlay_English.svg"
+                  alt="Get it on Google Play"
+                  width={239}
+                  height={71}
+                  className="h-auto w-[180px] rounded-md sm:w-[196px]"
+                />
               </button>
             </div>
 
@@ -107,25 +109,17 @@ export function LandingPage() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative lg:mx-auto lg:w-full lg:max-w-[290px] xl:max-w-[320px]">
             <div className="absolute inset-x-8 bottom-8 top-8 rounded-[28px] bg-secondary/70 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[28px] border border-white/80 bg-white p-4 shadow-card md:p-5">
-              <div className="rounded-[24px] bg-background p-3">
-                <Image
-                  src={heroImage}
-                  alt="MediBoo app preview"
-                  priority
-                  className="w-full rounded-[20px] object-cover"
-                />
-              </div>
-              <div className="mt-4 rounded-md bg-secondary/60 p-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/70">
-                  Gentle structure
-                </p>
-                <p className="mt-2 text-sm leading-7 text-primary">
-                  A calm interface for fast notes, steady routines, and less backtracking.
-                </p>
-              </div>
+            <div className="relative flex justify-center lg:py-4">
+              <Image
+                src="/images/AppJournalview.png"
+                alt="MediBoo app preview"
+                width={1290}
+                height={2796}
+                priority
+                className="mx-auto h-auto w-full max-w-[250px] object-cover drop-shadow-[0_12px_30px_rgba(33,33,33,0.12)] sm:max-w-[280px] lg:max-w-[230px] xl:max-w-[250px]"
+              />
             </div>
           </div>
         </div>
@@ -183,44 +177,5 @@ export function LandingPage() {
 
       <WaitlistModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
-  );
-}
-
-function AppleIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      className="h-6 w-6 flex-none"
-    >
-      <path d="M16.56 12.49c.02 2.38 2.08 3.17 2.1 3.18-.02.06-.33 1.14-1.09 2.25-.66.96-1.34 1.92-2.42 1.94-1.06.02-1.41-.63-2.62-.63-1.22 0-1.6.61-2.6.65-1.04.04-1.82-1.04-2.49-1.99-1.37-1.98-2.41-5.61-1.01-8.05.69-1.22 1.93-1.99 3.28-2.01 1.03-.02 2 .69 2.62.69.62 0 1.8-.85 3.03-.72.52.02 1.98.21 2.92 1.59-.08.05-1.74 1.01-1.72 3.1Zm-2.14-5.56c.55-.67.93-1.61.83-2.55-.79.03-1.74.52-2.31 1.18-.51.59-.96 1.54-.84 2.45.88.07 1.78-.45 2.32-1.08Z" />
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className="h-6 w-6 flex-none"
-    >
-      <path
-        d="M6.5 5.2c-.46.3-.75.82-.75 1.41v10.78c0 .59.29 1.11.75 1.41l9.12-6.07L6.5 5.2Z"
-        fill="currentColor"
-      />
-      <path
-        d="M17.13 10.82 8.64 5.03a1.78 1.78 0 0 1 1.74-.04l6.04 3.33c1.15.63 1.2 2.26.71 2.5Z"
-        fill="currentColor"
-        opacity="0.7"
-      />
-      <path
-        d="m17.13 13.18-8.49 5.79c.54.33 1.22.34 1.74.04l6.04-3.33c1.15-.63 1.2-2.26.71-2.5Z"
-        fill="currentColor"
-        opacity="0.7"
-      />
-    </svg>
   );
 }

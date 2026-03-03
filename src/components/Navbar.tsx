@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 
 export const Navbar = () => {
@@ -13,8 +14,15 @@ export const Navbar = () => {
       <Container className="py-5">
         <nav className="flex items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-md bg-secondary text-lg font-semibold text-primary shadow-card">
-              M
+            <span className="flex h-11 w-11 items-center justify-center overflow-hidden md:h-12 md:w-12">
+              <Image
+                src="/brand/primaryBoo.png"
+                alt="MediBoo logo"
+                width={778}
+                height={779}
+                className="h-full w-full object-contain"
+                priority
+              />
             </span>
             <span>
               <span className="block text-lg font-semibold text-primary">MediBoo</span>
