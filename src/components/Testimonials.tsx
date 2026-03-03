@@ -52,7 +52,7 @@ function TestimonialCard({
   return (
     <article className="flex h-full w-full max-w-[420px] flex-col rounded-md border border-border bg-[#FEFFFF] px-5 py-[14px] shadow-[0_2px_4px_rgba(33,33,33,0.26)] md:px-6 md:py-[18px] lg:h-[256px]">
       <div>
-        <div className="mb-2 h-px w-10 rounded-full bg-secondary/60" aria-hidden="true" />
+        <div className="mb-4 h-0.5 w-10 rounded-full bg-secondary/60" aria-hidden="true" />
         <p className="text-base leading-[1.65] text-primary">{quote}</p>
       </div>
       <div className="mt-auto border-t border-border/70 pt-2">
