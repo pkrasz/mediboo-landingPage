@@ -6,6 +6,7 @@ export const Navbar = () => {
   const navigation = [
     { href: "/#features", label: "Funkcje" },
     { href: "/#how-it-works", label: "Jak to dziala" },
+    { href: "/#testimonials", label: "Opinie" },
     { href: "/#faq", label: "FAQ" },
   ];
 

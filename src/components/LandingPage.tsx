@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/SectionTitle";
+import { Testimonials } from "@/components/Testimonials";
 import { trackEvent } from "@/lib/analytics";
 import { WaitlistModal } from "@/components/WaitlistModal";
 
@@ -160,6 +161,8 @@ export function LandingPage() {
         </div>
       </Container>
 
+      <Testimonials />
+
       <SectionTitle preTitle="FAQ" title="Questions parents ask before they install.">
         The iOS app is available now, and the Android launch is being staged through the waitlist.
       </SectionTitle>
@@ -172,6 +175,51 @@ export function LandingPage() {
               <p className="mt-3 text-base leading-8 text-muted-text">{item.answer}</p>
             </div>
           ))}
+        </div>
+      </Container>
+
+      <Container className="pb-16 md:pb-20">
+        <div className="rounded-md bg-white px-6 py-10 text-center shadow-card md:px-8 md:py-14">
+          <h2 className="text-3xl font-semibold tracking-tight text-primary lg:text-4xl">
+            Start organizing your family&apos;s health today.
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-muted-text">
+            Simple, calm, and designed for real parents.
+          </p>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://apps.apple.com/"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent("app_store_click", { destination: "app_store" })}
+              className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
+              aria-label="Download on the App Store"
+            >
+              <Image
+                src="/badges/DownloadontheAppStore_US-UK.svg"
+                alt="Download on the App Store"
+                width={120}
+                height={40}
+                className="h-auto w-[160px] rounded-md sm:w-[172px]"
+              />
+            </a>
+
+            <button
+              type="button"
+              onClick={openModal}
+              className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
+              aria-label="Join Google Play waitlist"
+            >
+              <Image
+                src="/badges/GetItOnGooglePlay_English.svg"
+                alt="Get it on Google Play"
+                width={239}
+                height={71}
+                className="h-auto w-[180px] rounded-md sm:w-[196px]"
+              />
+            </button>
+          </div>
         </div>
       </Container>
 
