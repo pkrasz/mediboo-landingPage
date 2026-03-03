@@ -51,42 +51,46 @@ export const Navbar = ({ locale, t }: Readonly<NavbarProps>) => {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-2 md:flex">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-md px-4 py-2 text-sm font-medium text-muted-text hover:bg-white hover:text-primary"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <div className="ml-auto flex items-center gap-6">
+            <div className="hidden items-center gap-2 md:flex">
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-md px-4 py-2 text-sm font-medium text-muted-text hover:bg-white hover:text-primary"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
 
-          <div
-            className="inline-flex items-center gap-1 rounded-md bg-white p-1 shadow-card"
-            aria-label={t.nav.languageLabel}
-            role="group"
-          >
-            {([
-              { value: "pl", label: "PL", flag: "🇵🇱" },
-              { value: "en", label: "EN", flag: "🇬🇧" },
-            ] as const).map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => handleLocaleChange(option.value)}
-                className={`inline-flex items-center gap-2 rounded-sm px-3 py-2 text-sm font-semibold transition-colors ${
-                  option.value === locale
-                    ? "bg-secondary text-primary"
-                    : "text-muted-text hover:bg-background hover:text-primary"
-                }`}
-                aria-pressed={option.value === locale}
-              >
-                <span aria-hidden="true">{option.flag}</span>
-                <span>{option.label}</span>
-              </button>
-            ))}
+            <div
+              className="inline-flex h-8 items-center gap-1 rounded-md border border-border/80 bg-white px-1 shadow-none"
+              aria-label={t.nav.languageLabel}
+              role="group"
+            >
+              {([
+                { value: "pl", label: "PL", flag: "🇵🇱" },
+                { value: "en", label: "EN", flag: "🇬🇧" },
+              ] as const).map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => handleLocaleChange(option.value)}
+                  className={`inline-flex h-6 items-center gap-1.5 rounded-sm px-2 text-sm font-medium transition-colors ${
+                    option.value === locale
+                      ? "bg-primary/10 text-primary"
+                      : "bg-transparent text-muted-text hover:text-primary"
+                  }`}
+                  aria-pressed={option.value === locale}
+                >
+                  <span aria-hidden="true" className="text-xs">
+                    {option.flag}
+                  </span>
+                  <span>{option.label}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </nav>
       </Container>
