@@ -3,13 +3,15 @@
 import { FormEvent, useEffect, useState } from "react";
 import { formProvider, honeypotFieldName } from "@/lib/forms";
 import { trackEvent } from "@/lib/analytics";
+import type { Dictionary } from "@/i18n";
 
 interface WaitlistModalProps {
   open: boolean;
   onClose: () => void;
+  t: Dictionary["waitlist"];
 }
 
-export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
+export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -72,7 +74,7 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
       form.reset();
       trackEvent("waitlist_submit", { location: "android_modal" });
     } catch {
-      setError("Nie udalo sie zapisac. Sprobuj ponownie za chwile.");
+      setError(t.error);
     } finally {
       setIsSubmitting(false);
     }
@@ -93,20 +95,20 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-              Android waitlist
+              {t.eyebrow}
             </p>
             <h2
               id="waitlist-modal-title"
               className="mt-2 text-2xl font-semibold tracking-tight text-primary"
             >
-              {isSubmitted ? "Thanks!" : "Join the early access list"}
+              {isSubmitted ? t.successTitle : t.title}
             </h2>
           </div>
           <button
             type="button"
             onClick={onClose}
             className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-background text-primary hover:bg-secondary"
-            aria-label="Close waitlist form"
+            aria-label={t.closeAria}
           >
             <span className="text-xl leading-none">x</span>
           </button>
@@ -114,11 +116,9 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
 
         {isSubmitted ? (
           <div className="mt-6 rounded-md bg-secondary/60 p-4">
-            <p className="text-base font-medium text-primary">
-              We will let you know when the Android version is ready.
-            </p>
+            <p className="text-base font-medium text-primary">{t.successBody}</p>
             <p className="mt-2 text-sm leading-7 text-muted-text">
-              Your email has been added to the MediBoo waitlist.
+              {t.successMeta}
             </p>
           </div>
         ) : (
@@ -141,7 +141,7 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
                 htmlFor="waitlist-email"
                 className="mb-2 block text-sm font-medium text-primary"
               >
-                Email address
+                {t.emailLabel}
               </label>
               <input
                 id="waitlist-email"
@@ -150,7 +150,7 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
                 required
                 autoComplete="email"
                 className="w-full rounded-md border border-border bg-white px-4 py-3 text-base text-primary outline-none ring-0 placeholder:text-muted-text/70 focus:border-primary"
-                placeholder="you@example.com"
+                placeholder={t.emailPlaceholder}
               />
             </div>
 
@@ -162,7 +162,7 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
                 required
                 className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent"
               />
-              <span>I agree to receive launch updates about the Android release.</span>
+              <span>{t.consent}</span>
             </label>
 
             {error ? <p className="text-sm text-error">{error}</p> : null}
@@ -172,7 +172,7 @@ export function WaitlistModal({ open, onClose }: Readonly<WaitlistModalProps>) {
               disabled={isSubmitting}
               className="inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-base font-semibold text-white shadow-card hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {isSubmitting ? "Sending..." : "Join waitlist"}
+              {isSubmitting ? t.submitting : t.submit}
             </button>
           </form>
         )}

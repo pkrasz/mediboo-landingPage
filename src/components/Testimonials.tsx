@@ -1,38 +1,6 @@
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/SectionTitle";
-
-const testimonials = [
-  {
-    name: "Marta K.",
-    role: "Mama 3 dzieci",
-    quote:
-      "W końcu mam wszystko w jednym miejscu — objawy, leki i wizyty. Przy trójce dzieci to ratuje głowę, bo nic nie ginie w notatkach i wiadomościach.",
-  },
-  {
-    name: "Bartek C.",
-    role: "Tata 2 dzieci",
-    quote:
-      "Udostępniłem profil żonie i od razu mamy spójne zapiski. Nie dublujemy informacji i łatwiej ogarnąć leki oraz terminy wizyt.",
-  },
-  {
-    name: "Kasia W.",
-    role: "Mama 4 dzieci",
-    quote:
-      "Najbardziej lubię porządek i prostotę. Szybko zapisuję, co się działo i później mam czarno na białym — bez chaosu.",
-  },
-  {
-    name: "Michał P.",
-    role: "Opiekuje się też rodzicami",
-    quote:
-      "Poza dziećmi mam tu też zdrowie rodziców — wyniki, leki, wizyty. Wreszcie nie muszę pamiętać wszystkiego z głowy.",
-  },
-  {
-    name: "Ewa S.",
-    role: "Mama 2 dzieci + dziadkowie w profilu",
-    quote:
-      "Dodałam dzieci i dziadków w jednym miejscu. Łatwo wrócić do historii i szybciej powiedzieć lekarzowi, co było wcześniej.",
-  },
-];
+import type { Dictionary } from "@/i18n";
 
 function getInitials(name: string) {
   return name
@@ -48,7 +16,7 @@ function TestimonialCard({
   name,
   role,
   quote,
-}: Readonly<(typeof testimonials)[number]>) {
+}: Readonly<Dictionary["testimonials"]["items"][number]>) {
   return (
     <article className="flex h-full w-full max-w-[420px] flex-col rounded-md border border-border bg-[#FEFFFF] px-5 py-[14px] shadow-[0_2px_4px_rgba(33,33,33,0.26)] md:px-6 md:py-[18px] lg:h-[256px]">
       <div>
@@ -70,34 +38,37 @@ function TestimonialCard({
   );
 }
 
-export function Testimonials() {
+interface TestimonialsProps {
+  t: Dictionary["testimonials"];
+}
+
+export function Testimonials({ t }: Readonly<TestimonialsProps>) {
   return (
     <>
       <SectionTitle
         id="testimonials"
-        preTitle="Testimonials"
-        title="What families say after using MediBoo."
+        preTitle={t.preTitle}
+        title={t.title}
       >
-        Real feedback from parents and caregivers keeping routines, notes, and visits in one
-        place.
+        {t.description}
       </SectionTitle>
 
       <Container className="pb-8">
         <div className="grid gap-5 md:grid-cols-2 lg:hidden">
-          {testimonials.map((testimonial) => (
+          {t.items.map((testimonial) => (
             <TestimonialCard key={testimonial.name} {...testimonial} />
           ))}
         </div>
 
         <div className="hidden lg:flex lg:flex-col lg:gap-5">
           <div className="grid grid-cols-3 justify-items-center gap-5">
-            {testimonials.slice(0, 3).map((testimonial) => (
+            {t.items.slice(0, 3).map((testimonial) => (
               <TestimonialCard key={testimonial.name} {...testimonial} />
             ))}
           </div>
 
           <div className="flex justify-center gap-5">
-            {testimonials.slice(3).map((testimonial) => (
+            {t.items.slice(3).map((testimonial) => (
               <TestimonialCard key={testimonial.name} {...testimonial} />
             ))}
           </div>

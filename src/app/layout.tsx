@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import { SiteLayout } from "@/components/SiteLayout";
+import { getDictionary } from "@/i18n";
 
 export const metadata: Metadata = {
   title: {
     default: "MediBoo",
     template: "%s | MediBoo",
   },
-  description: "MediBoo helps parents keep children's care routines calm, organized, and easy to follow.",
+  description: getDictionary("en").metadata.siteDescription,
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GoogleAnalytics />
-        <SiteLayout>{children}</SiteLayout>
+        {children}
       </body>
     </html>
   );

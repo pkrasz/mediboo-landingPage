@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "siteDescription": "MediBoo pomaga rodzicom utrzymac spokojne, uporzadkowane i latwe do sledzenia rutyny zdrowotne dzieci."
+  },
+  "site": {
+    "productName": "MediBoo",
+    "tagline": "iOS dla spokojniejszych rutyn rodzicow"
+  },
+  "nav": {
+    "features": "Funkcje",
+    "howItWorks": "Jak to dziala",
+    "testimonials": "Opinie",
+    "faq": "FAQ",
+    "languageLabel": "Jezyk"
+  },
+  "landing": {
+    "eyebrow": "Zaufane, lagodne rutyny pediatryczne",
+    "title": "Jedno miejsce, ktore utrzymuje opieke nad dzieckiem spokojna i przejrzysta.",
+    "description": "MediBoo pomaga rodzicom porzadkowac objawy, leki i codzienne follow-upy, aby decyzje dotyczace opieki byly prostsze, szybsze i mniej stresujace.",
+    "appStoreAria": "Pobierz w App Store",
+    "googlePlayAria": "Dolacz do listy oczekujacych Google Play",
+    "appPreviewAlt": "Podglad aplikacji MediBoo",
+    "chips": [
+      "Bez tarc zwiazanych z konfiguracja konta",
+      "Przejrzyste podsumowania na wizyty",
+      "Projektowane pod codzienne rutyny"
+    ],
+    "features": {
+      "preTitle": "Funkcje",
+      "title": "Zaprojektowane tak, by dawac porzadek, nie kliniczny dystans.",
+      "description": "MediBoo utrzymuje interfejs miekki, czytelny i celowo prosty, aby rodziny mogly skupic sie na dziecku, a nie na narzedziu.",
+      "cards": [
+        {
+          "title": "Jedna spokojna os czasu opieki",
+          "body": "Zbieraj objawy, leki i follow-upy w jednym miejscu, aby kolejny krok byl zawsze jasny."
+        },
+        {
+          "title": "Stworzone dla zapracowanych rodzicow",
+          "body": "Szybkie codzienne wpisy i przypomnienia utrzymuja rytm bez dodawania kolejnego tarcia."
+        },
+        {
+          "title": "Latwe do udostepnienia",
+          "body": "Zabierz uporzadkowane notatki na wizyte i utrzymuj wszystkich opiekunow na tej samej stronie."
+        }
+      ]
+    },
+    "howItWorks": {
+      "preTitle": "Jak to dziala",
+      "title": "Spokojna rutyna w trzech prostych krokach.",
+      "description": "W ciagu dnia zapisuj tylko to, co potrzebne, a na wizyte zabierz pelny obraz sytuacji.",
+      "stepLabel": "Krok",
+      "items": [
+        "Zapisuj objawy, leki i notatki opiekuncze w kilka sekund.",
+        "Utrzymuj powtarzalne rutyny w zasiegu wzroku dzieki delikatnym przypomnieniom.",
+        "Wchodz na wizyty z prosta historia, ktora naprawde ma sens."
+      ]
+    },
+    "faq": {
+      "preTitle": "FAQ",
+      "title": "Pytania, ktore rodzice zadaja przed instalacja.",
+      "description": "Aplikacja iOS jest dostepna teraz, a premiera Androida jest realizowana etapami przez liste oczekujacych.",
+      "items": [
+        {
+          "question": "Czy MediBoo jest juz dostepne na iPhone?",
+          "answer": "Tak. Obecny start skupia sie na doswiadczeniu iOS, a dostep na Androidzie otwieramy przez liste oczekujacych."
+        },
+        {
+          "question": "Czy przycisk Google Play cos dzisiaj pobiera?",
+          "answer": "Nie. Otwiera modal z lista oczekujacych na Androida, aby zainteresowani rodzice mogli dostac powiadomienie jako pierwsi."
+        },
+        {
+          "question": "Czy moge poprosic o pelne usuniecie danych?",
+          "answer": "Tak. Skorzystaj z dedykowanej strony usuwania danych podlinkowanej w stopce, aby wyslac zweryfikowana prosbe."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Zacznij porzadkowac zdrowie swojej rodziny juz dzisiaj.",
+      "description": "Prosto, spokojnie i zaprojektowane dla prawdziwych rodzicow."
+    }
+  },
+  "testimonials": {
+    "preTitle": "Opinie",
+    "title": "Co rodziny mowia po korzystaniu z MediBoo.",
+    "description": "Prawdziwe opinie rodzicow i opiekunow, ktorzy trzymaja rutyny, notatki i wizyty w jednym miejscu.",
+    "items": [
+      {
+        "name": "Marta K.",
+        "role": "Mama 3 dzieci",
+        "quote": "W koncu mam wszystko w jednym miejscu: objawy, leki i wizyty. Przy trojce dzieci to ratuje glowe, bo nic nie ginie w notatkach i wiadomosciach."
+      },
+      {
+        "name": "Bartek C.",
+        "role": "Tata 2 dzieci",
+        "quote": "Udostepnilem profil zonie i od razu mamy spojne zapiski. Nie dublujemy informacji i latwiej ogarnac leki oraz terminy wizyt."
+      },
+      {
+        "name": "Kasia W.",
+        "role": "Mama 4 dzieci",
+        "quote": "Najbardziej lubie porzadek i prostote. Szybko zapisuje, co sie dzialo i pozniej mam wszystko czarno na bialym, bez chaosu."
+      },
+      {
+        "name": "Michal P.",
+        "role": "Opiekuje sie tez rodzicami",
+        "quote": "Poza dziecmi mam tu tez zdrowie rodzicow: wyniki, leki, wizyty. Wreszcie nie musze pamietac wszystkiego z glowy."
+      },
+      {
+        "name": "Ewa S.",
+        "role": "Mama 2 dzieci i dziadkowie w profilu",
+        "quote": "Dodalam dzieci i dziadkow w jednym miejscu. Latwo wrocic do historii i szybciej powiedziec lekarzowi, co bylo wczesniej."
+      }
+    ]
+  },
+  "waitlist": {
+    "eyebrow": "Lista oczekujacych Android",
+    "title": "Dolacz do listy wczesnego dostepu",
+    "successTitle": "Dziekujemy!",
+    "successBody": "Damy Ci znac, gdy wersja Android bedzie gotowa.",
+    "successMeta": "Twoj email zostal dodany do listy oczekujacych MediBoo.",
+    "closeAria": "Zamknij formularz listy oczekujacych",
+    "emailLabel": "Adres email",
+    "emailPlaceholder": "twoj@email.com",
+    "consent": "Zgadzam sie otrzymywac aktualizacje dotyczace premiery wersji Android.",
+    "submit": "Dolacz do listy",
+    "submitting": "Wysylanie...",
+    "error": "Nie udalo sie zapisac. Sprobuj ponownie za chwile."
+  },
+  "footer": {
+    "description": "Spokojne narzedzia do zarzadzania rutynami pediatrycznymi, codziennymi objawami i praktycznymi follow-upami z mniejszym obciazeniem.",
+    "privacy": "Polityka prywatnosci",
+    "terms": "Regulamin",
+    "deleteData": "Usun dane",
+    "copyright": "Wszelkie prawa zastrzezone."
+  },
+  "documents": {
+    "label": "Dokument",
+    "terms": {
+      "title": "Regulamin",
+      "intro": "Ten regulamin opisuje podstawowe zasady korzystania ze strony internetowej i aplikacji mobilnej MediBoo."
+    },
+    "privacy": {
+      "title": "Polityka prywatnosci",
+      "intro": "Ta polityka wyjasnia, jakie informacje MediBoo przetwarza i jak sa one wykorzystywane do wspierania uslugi."
+    }
+  },
+  "deleteData": {
+    "eyebrow": "Usun dane",
+    "title": "Popros o trwale usuniecie danych",
+    "description": "Uzyj tego formularza, aby poprosic o usuniecie danych konta MediBoo. Mozemy skontaktowac sie z Toba, aby zweryfikowac wlasciciela przed zakonczeniem procesu.",
+    "note": "Podaj email uzywany w aplikacji oraz wystarczajacy kontekst, aby zidentyfikowac konto.",
+    "successTitle": "Prosba odebrana",
+    "successBody": "Przeanalizujemy prosbe i skontaktujemy sie na podany adres email.",
+    "nameLabel": "Imie i nazwisko",
+    "emailLabel": "Email konta",
+    "messageLabel": "Szczegoly prosby",
+    "messagePlaceholder": "Prosze usunac wszystkie dane konta powiazane z tym adresem email.",
+    "submit": "Wyslij prosbe",
+    "submitting": "Wysylanie...",
+    "error": "Nie udalo sie wyslac formularza. Sprobuj ponownie."
+  }
+}

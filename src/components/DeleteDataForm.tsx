@@ -3,8 +3,13 @@
 import { FormEvent, useState } from "react";
 import { Container } from "@/components/Container";
 import { formProvider, honeypotFieldName } from "@/lib/forms";
+import type { Dictionary } from "@/i18n";
 
-export function DeleteDataForm() {
+interface DeleteDataFormProps {
+  t: Dictionary["deleteData"];
+}
+
+export function DeleteDataForm({ t }: Readonly<DeleteDataFormProps>) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -33,7 +38,7 @@ export function DeleteDataForm() {
       setIsSubmitted(true);
       form.reset();
     } catch {
-      setError("Nie udalo sie wyslac formularza. Sprobuj ponownie.");
+      setError(t.error);
     } finally {
       setIsSubmitting(false);
     }
@@ -44,26 +49,25 @@ export function DeleteDataForm() {
       <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[0.92fr_1.08fr]">
         <div className="rounded-md bg-white p-6 shadow-card md:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-            Delete data
+            {t.eyebrow}
           </p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-primary">
-            Request permanent data deletion
+            {t.title}
           </h1>
           <p className="mt-4 text-base leading-8 text-muted-text">
-            Use this form to request removal of your MediBoo account data. We may contact you
-            to verify ownership before deletion is completed.
+            {t.description}
           </p>
           <div className="mt-6 rounded-md bg-secondary/60 p-4 text-sm leading-7 text-primary">
-            Include the email used in the app and enough context for us to identify the account.
+            {t.note}
           </div>
         </div>
 
         <div className="rounded-md bg-white p-6 shadow-card md:p-8">
           {isSubmitted ? (
             <div className="rounded-md bg-secondary/60 p-5">
-              <h2 className="text-xl font-semibold text-primary">Request received</h2>
+              <h2 className="text-xl font-semibold text-primary">{t.successTitle}</h2>
               <p className="mt-3 text-base leading-8 text-muted-text">
-                We will review your request and follow up using the email you provided.
+                {t.successBody}
               </p>
             </div>
           ) : (
@@ -86,7 +90,7 @@ export function DeleteDataForm() {
                   htmlFor="delete-name"
                   className="mb-2 block text-sm font-medium text-primary"
                 >
-                  Full name
+                  {t.nameLabel}
                 </label>
                 <input
                   id="delete-name"
@@ -102,7 +106,7 @@ export function DeleteDataForm() {
                   htmlFor="delete-email"
                   className="mb-2 block text-sm font-medium text-primary"
                 >
-                  Account email
+                  {t.emailLabel}
                 </label>
                 <input
                   id="delete-email"
@@ -119,7 +123,7 @@ export function DeleteDataForm() {
                   htmlFor="delete-message"
                   className="mb-2 block text-sm font-medium text-primary"
                 >
-                  Request details
+                  {t.messageLabel}
                 </label>
                 <textarea
                   id="delete-message"
@@ -127,7 +131,7 @@ export function DeleteDataForm() {
                   required
                   rows={6}
                   className="w-full rounded-md border border-border bg-white px-4 py-3 text-base text-primary outline-none focus:border-primary"
-                  placeholder="Please delete all account data connected to this email address."
+                  placeholder={t.messagePlaceholder}
                 />
               </div>
 
@@ -138,7 +142,7 @@ export function DeleteDataForm() {
                 disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-base font-semibold text-white shadow-card hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? "Sending..." : "Submit request"}
+                {isSubmitting ? t.submitting : t.submit}
               </button>
             </form>
           )}

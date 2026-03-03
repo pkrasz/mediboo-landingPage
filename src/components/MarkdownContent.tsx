@@ -7,12 +7,14 @@ interface MarkdownContentProps {
   fileName: string;
   title: string;
   intro: string;
+  documentLabel: string;
 }
 
 export async function MarkdownContent({
   fileName,
   title,
   intro,
+  documentLabel,
 }: Readonly<MarkdownContentProps>) {
   const filePath = path.join(process.cwd(), "content", fileName);
   const markdown = await fs.readFile(filePath, "utf8");
@@ -22,7 +24,7 @@ export async function MarkdownContent({
       <div className="mx-auto max-w-3xl rounded-md bg-white p-6 shadow-card md:p-10">
         <div className="border-b border-border pb-6">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-            Dokument
+            {documentLabel}
           </p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-primary md:text-4xl">
             {title}

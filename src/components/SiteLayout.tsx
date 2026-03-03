@@ -1,17 +1,21 @@
 import { ReactNode } from "react";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import type { Dictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 
 interface SiteLayoutProps {
   children: ReactNode;
+  locale: Locale;
+  dictionary: Dictionary;
 }
 
-export function SiteLayout({ children }: Readonly<SiteLayoutProps>) {
+export function SiteLayout({ children, locale, dictionary }: Readonly<SiteLayoutProps>) {
   return (
     <div className="min-h-screen bg-background text-text">
-      <Navbar />
+      <Navbar locale={locale} t={dictionary} />
       <main>{children}</main>
-      <Footer />
+      <Footer locale={locale} t={dictionary} />
     </div>
   );
 }
