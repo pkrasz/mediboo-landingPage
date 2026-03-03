@@ -2,18 +2,22 @@ import React from "react";
 import { Container } from "@/components/Container";
 
 interface SectionTitleProps {
+  id?: string;
   preTitle?: string;
   title?: string;
   align?: "left" | "center";
   children?: React.ReactNode;
+  className?: string;
 }
 
 export const SectionTitle = (props: Readonly<SectionTitleProps>) => {
+  const alignmentClass = props.align === "left" ? "" : "items-center justify-center text-center";
+  const customClassName = props.className ? ` ${props.className}` : "";
+
   return (
     <Container
-      className={`mt-4 flex w-full flex-col ${
-        props.align === "left" ? "" : "items-center justify-center text-center"
-      }`}
+      id={props.id}
+      className={`mt-4 flex w-full scroll-mt-[var(--nav-scroll-offset)] flex-col ${alignmentClass}${customClassName}`}
     >
       {props.preTitle && (
         <div className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">

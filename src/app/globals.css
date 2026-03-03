@@ -5,11 +5,16 @@
 @layer base {
   :root {
     color-scheme: light;
+    --nav-scroll-offset: 6rem;
   }
 
   html,
   body {
     @apply bg-background font-sans text-text antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -29,5 +34,11 @@
 
   ::selection {
     @apply bg-secondary text-primary;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

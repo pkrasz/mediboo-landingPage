@@ -126,12 +126,16 @@ export function LandingPage() {
         </div>
       </Container>
 
-      <SectionTitle preTitle="Features" title="Designed to feel organized, not clinical.">
+      <SectionTitle
+        id="features"
+        preTitle="Features"
+        title="Designed to feel organized, not clinical."
+      >
         MediBoo keeps the interface soft, readable, and intentionally simple so families can
         focus on the child, not the tool.
       </SectionTitle>
 
-      <Container className="pb-8" id="features">
+      <Container className="pb-8">
         <div className="grid gap-5 md:grid-cols-3">
           {featureCards.map((card) => (
             <div key={card.title} className="rounded-md bg-white p-6 shadow-card">
@@ -142,11 +146,15 @@ export function LandingPage() {
         </div>
       </Container>
 
-      <SectionTitle preTitle="How it works" title="A steady routine in three quick steps.">
+      <SectionTitle
+        id="how-it-works"
+        preTitle="How it works"
+        title="A steady routine in three quick steps."
+      >
         Keep updates light during the day, then bring the full picture into every follow-up.
       </SectionTitle>
 
-      <Container className="pb-8" id="how-it-works">
+      <Container className="pb-8">
         <div className="rounded-md bg-white p-6 shadow-card md:p-8">
           <div className="grid gap-5 md:grid-cols-3">
             {steps.map((step, index) => (
@@ -163,11 +171,15 @@ export function LandingPage() {
 
       <Testimonials />
 
-      <SectionTitle preTitle="FAQ" title="Questions parents ask before they install.">
+      <SectionTitle
+        id="faq"
+        preTitle="FAQ"
+        title="Questions parents ask before they install."
+      >
         The iOS app is available now, and the Android launch is being staged through the waitlist.
       </SectionTitle>
 
-      <Container className="pb-14 md:pb-16" id="faq">
+      <Container className="pb-14 md:pb-16">
         <div className="space-y-4">
           {faqItems.map((item) => (
             <div key={item.question} className="rounded-md bg-white p-6 shadow-card">

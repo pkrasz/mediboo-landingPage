@@ -73,12 +73,16 @@ function TestimonialCard({
 export function Testimonials() {
   return (
     <>
-      <SectionTitle preTitle="Testimonials" title="What families say after using MediBoo.">
+      <SectionTitle
+        id="testimonials"
+        preTitle="Testimonials"
+        title="What families say after using MediBoo."
+      >
         Real feedback from parents and caregivers keeping routines, notes, and visits in one
         place.
       </SectionTitle>
 
-      <Container className="pb-8" id="testimonials">
+      <Container className="pb-8">
         <div className="grid gap-5 md:grid-cols-2 lg:hidden">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.name} {...testimonial} />
