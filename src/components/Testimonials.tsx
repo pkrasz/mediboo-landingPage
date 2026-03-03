@@ -44,6 +44,32 @@ function getInitials(name: string) {
     .toUpperCase();
 }
 
+function TestimonialCard({
+  name,
+  role,
+  quote,
+}: Readonly<(typeof testimonials)[number]>) {
+  return (
+    <article className="flex h-full w-full max-w-[420px] flex-col rounded-md border border-border bg-[#FEFFFF] px-5 py-[14px] shadow-[0_2px_4px_rgba(33,33,33,0.26)] md:px-6 md:py-[18px] lg:h-[256px]">
+      <div>
+        <div className="mb-2 h-px w-10 rounded-full bg-secondary/60" aria-hidden="true" />
+        <p className="text-base leading-[1.65] text-primary">{quote}</p>
+      </div>
+      <div className="mt-auto border-t border-border/70 pt-2">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-[13px] font-medium text-primary">
+            {getInitials(name)}
+          </div>
+          <div className="space-y-0.5">
+            <p className="text-base font-semibold text-primary">{name}</p>
+            <p className="text-sm text-muted-text">{role}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function Testimonials() {
   return (
     <>
@@ -53,38 +79,24 @@ export function Testimonials() {
       </SectionTitle>
 
       <Container className="pb-8" id="testimonials">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
-          {testimonials.map((testimonial, index) => {
-            const desktopPosition =
-              index === 3
-                ? "lg:col-start-2 lg:col-span-2"
-                : index === 4
-                  ? "lg:col-start-4 lg:col-span-2"
-                  : "lg:col-span-2";
+        <div className="grid gap-5 md:grid-cols-2 lg:hidden">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.name} {...testimonial} />
+          ))}
+        </div>
 
-            return (
-              <article
-                key={testimonial.name}
-                className={`rounded-md border border-border bg-[#FEFFFF] px-5 py-5 shadow-card md:px-6 md:py-6 ${
-                  desktopPosition
-                }`}
-              >
-                <div className="mb-4 h-1 w-12 rounded-full bg-secondary" aria-hidden="true" />
-                <p className="text-base leading-8 text-primary">{testimonial.quote}</p>
-                <div className="mt-5 border-t border-border pt-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-primary">
-                      {getInitials(testimonial.name)}
-                    </div>
-                    <div>
-                      <p className="text-base font-semibold text-primary">{testimonial.name}</p>
-                      <p className="text-sm text-muted-text">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+        <div className="hidden lg:flex lg:flex-col lg:gap-5">
+          <div className="grid grid-cols-3 justify-items-center gap-5">
+            {testimonials.slice(0, 3).map((testimonial) => (
+              <TestimonialCard key={testimonial.name} {...testimonial} />
+            ))}
+          </div>
+
+          <div className="flex justify-center gap-5">
+            {testimonials.slice(3).map((testimonial) => (
+              <TestimonialCard key={testimonial.name} {...testimonial} />
+            ))}
+          </div>
         </div>
       </Container>
     </>
