@@ -1,132 +1,132 @@
 {
   "metadata": {
-    "siteDescription": "MediBoo pomaga rodzicom utrzymac spokojne, uporzadkowane i latwe do sledzenia rutyny zdrowotne dzieci."
+    "siteDescription": "MediBoo to zeszyt chorobowy dla całej rodziny: objawy, gorączka, leki, wizyty i wyniki badań — w jednym miejscu, zawsze pod ręką."
   },
   "site": {
     "productName": "MediBoo",
-    "tagline": "iOS dla spokojniejszych rutyn rodzicow"
+    "tagline": "Spokojny dziennik zdrowia na iOS"
   },
   "nav": {
     "features": "Funkcje",
-    "howItWorks": "Jak to dziala",
+    "howItWorks": "Jak to działa",
     "testimonials": "Opinie",
     "faq": "FAQ",
-    "languageLabel": "Jezyk"
+    "languageLabel": "Język"
   },
   "landing": {
-    "eyebrow": "Zaufane, lagodne rutyny pediatryczne",
-    "title": "Jedno miejsce, ktore utrzymuje opieke nad dzieckiem spokojna i przejrzysta.",
-    "description": "MediBoo pomaga rodzicom porzadkowac objawy, leki i codzienne follow-upy, aby decyzje dotyczace opieki byly prostsze, szybsze i mniej stresujace.",
+    "eyebrow": "Zeszyt chorobowy, który porządkuje leczenie",
+    "title": "Objawy, gorączka i leki — zapisywane dokładnie, bez chaosu.",
+    "description": "Dodawaj wpisy z datą i godziną, ustawiaj harmonogramy leków z przypomnieniami, zapisuj wizyty, pytania do lekarza i załączniki. Wszystko osobno dla każdego profilu w rodzinie.",
     "appStoreAria": "Pobierz w App Store",
-    "googlePlayAria": "Dolacz do listy oczekujacych Google Play",
-    "appPreviewAlt": "Podglad aplikacji MediBoo",
+    "googlePlayAria": "Dołącz do listy oczekujących Google Play",
+    "appPreviewAlt": "Podgląd aplikacji MediBoo — zeszyt chorobowy i kalendarz gorączki",
     "chips": [
-      "Bez tarc zwiazanych z konfiguracja konta",
-      "Przejrzyste podsumowania na wizyty",
-      "Projektowane pod codzienne rutyny"
+      "Prywatność: brak modeli AI na danych zdrowia",
+      "Blokada aplikacji: PIN lub Face ID / Touch ID",
+      "Kalendarz gorączki z kolorami temperatur"
     ],
     "features": {
       "preTitle": "Funkcje",
-      "title": "Zaprojektowane tak, by dawac porzadek, nie kliniczny dystans.",
-      "description": "MediBoo utrzymuje interfejs miekki, czytelny i celowo prosty, aby rodziny mogly skupic sie na dziecku, a nie na narzedziu.",
+      "title": "Historia zdrowia, którą naprawdę da się ogarnąć.",
+      "description": "MediBoo pomaga monitorować przebieg choroby i leczenia w czasie: objawy, dawki leków, wizyty i wyniki badań. Prosto, czytelnie i z naciskiem na bezpieczeństwo danych.",
       "cards": [
         {
-          "title": "Jedna spokojna os czasu opieki",
-          "body": "Zbieraj objawy, leki i follow-upy w jednym miejscu, aby kolejny krok byl zawsze jasny."
+          "title": "Dziennik objawów i przebiegu choroby",
+          "body": "Zapisuj katar, kaszel, ból, gorączkę i inne objawy z dokładną godziną, aby łatwo odtworzyć przebieg choroby."
         },
         {
-          "title": "Stworzone dla zapracowanych rodzicow",
-          "body": "Szybkie codzienne wpisy i przypomnienia utrzymuja rytm bez dodawania kolejnego tarcia."
+          "title": "Harmonogram leczenia i przypomnienia",
+          "body": "Ustaw nazwę leku, okres przyjmowania oraz liczbę dawek dziennie. Telefon przypomni o porze podania."
         },
         {
-          "title": "Latwe do udostepnienia",
-          "body": "Zabierz uporzadkowane notatki na wizyte i utrzymuj wszystkich opiekunow na tej samej stronie."
+          "title": "Wizyty, lekarze, placówki i załączniki",
+          "body": "Dodawaj powód wizyty, listę pytań, notatki i zdjęcia/PDF. Aplikacja zapamięta lekarzy i placówki, by kolejne wizyty dodawać szybciej."
         }
       ]
     },
     "howItWorks": {
-      "preTitle": "Jak to dziala",
-      "title": "Spokojna rutyna w trzech prostych krokach.",
-      "description": "W ciagu dnia zapisuj tylko to, co potrzebne, a na wizyte zabierz pelny obraz sytuacji.",
+      "preTitle": "Jak to działa",
+      "title": "Trzy kroki, które dają spokój w chorobie.",
+      "description": "Wpisy rób w kilka sekund. Gdy przychodzi czas wizyty lub konsultacji, masz pełną historię — bez zgadywania.",
       "stepLabel": "Krok",
       "items": [
-        "Zapisuj objawy, leki i notatki opiekuncze w kilka sekund.",
-        "Utrzymuj powtarzalne rutyny w zasiegu wzroku dzieki delikatnym przypomnieniom.",
-        "Wchodz na wizyty z prosta historia, ktora naprawde ma sens."
+        "Wybierz profil (dziecko, dorosły, zwierzak) i dodaj objawy lub temperaturę z datą i godziną.",
+        "Zarejestruj lek albo ustaw harmonogram leczenia z przypomnieniami o dawkach.",
+        "Przygotuj wizytę: pytania do lekarza, notatki, załączniki i szybki podgląd historii w kalendarzu."
       ]
     },
     "faq": {
       "preTitle": "FAQ",
-      "title": "Pytania, ktore rodzice zadaja przed instalacja.",
-      "description": "Aplikacja iOS jest dostepna teraz, a premiera Androida jest realizowana etapami przez liste oczekujacych.",
+      "title": "Najczęstsze pytania",
+      "description": "Poniżej odpowiedzi na pytania o dostępność, prywatność i kalkulator dawek.",
       "items": [
         {
-          "question": "Czy MediBoo jest juz dostepne na iPhone?",
-          "answer": "Tak. Obecny start skupia sie na doswiadczeniu iOS, a dostep na Androidzie otwieramy przez liste oczekujacych."
+          "question": "Czy MediBoo działa dla całej rodziny?",
+          "answer": "Tak. Możesz prowadzić wiele profili: dzieci, dorosłych, a nawet zwierzęta. Każdy profil ma osobną historię zdrowia."
         },
         {
-          "question": "Czy przycisk Google Play cos dzisiaj pobiera?",
-          "answer": "Nie. Otwiera modal z lista oczekujacych na Androida, aby zainteresowani rodzice mogli dostac powiadomienie jako pierwsi."
+          "question": "Jak dbacie o prywatność danych zdrowotnych?",
+          "answer": "MediBoo nie używa modeli AI do uczenia się na wpisach zdrowotnych. Dodatkowo możesz włączyć blokadę aplikacji: PIN lub biometrię urządzenia."
         },
         {
-          "question": "Czy moge poprosic o pelne usuniecie danych?",
-          "answer": "Tak. Skorzystaj z dedykowanej strony usuwania danych podlinkowanej w stopce, aby wyslac zweryfikowana prosbe."
+          "question": "Na jakich wytycznych opiera się kalkulator dawek przeciwgorączkowych?",
+          "answer": "Kalkulator korzysta z dawkowania wg masy ciała (mg/kg). Źródło wytycznych: World Health Organization (WHO), Pocket Book of Hospital Care for Children. Funkcja ma charakter informacyjny i nie zastępuje porady lekarza."
         }
       ]
     },
     "cta": {
-      "title": "Zacznij porzadkowac zdrowie swojej rodziny juz dzisiaj.",
-      "description": "Prosto, spokojnie i zaprojektowane dla prawdziwych rodzicow."
+      "title": "Zacznij prowadzić zeszyt chorobowy w telefonie.",
+      "description": "Szybciej zapisuj. Spokojniej podejmuj decyzje. Miej historię gotową na wizytę."
     }
   },
   "testimonials": {
     "preTitle": "Opinie",
-    "title": "Co rodziny mowia po korzystaniu z MediBoo.",
-    "description": "Prawdziwe opinie rodzicow i opiekunow, ktorzy trzymaja rutyny, notatki i wizyty w jednym miejscu.",
+    "title": "Rodzice mówią, że to oszczędza nerwy.",
+    "description": "Krótko: mniej pamiętania, więcej porządku. Tak najczęściej opisują MediBoo użytkownicy.",
     "items": [
       {
         "name": "Marta K.",
         "role": "Mama 3 dzieci",
-        "quote": "W koncu mam wszystko w jednym miejscu: objawy, leki i wizyty. Przy trojce dzieci to ratuje glowe, bo nic nie ginie w notatkach i wiadomosciach."
+        "quote": "Przy gorączce wszystko mieszało mi się w głowie. Teraz mam godzinę po godzinie: temperatura, lek, objawy. Mega ulga."
       },
       {
         "name": "Bartek C.",
         "role": "Tata 2 dzieci",
-        "quote": "Udostepnilem profil zonie i od razu mamy spojne zapiski. Nie dublujemy informacji i latwiej ogarnac leki oraz terminy wizyt."
+        "quote": "Najlepsze są przypomnienia o dawkach i to, że oboje z żoną widzimy tę samą historię bez przeklejania wiadomości."
       },
       {
         "name": "Kasia W.",
         "role": "Mama 4 dzieci",
-        "quote": "Najbardziej lubie porzadek i prostote. Szybko zapisuje, co sie dzialo i pozniej mam wszystko czarno na bialym, bez chaosu."
+        "quote": "Do lekarza idę z gotowymi notatkami i pytaniami. W końcu nie zapominam o połowie rzeczy w stresie."
       },
       {
         "name": "Michal P.",
         "role": "Opiekuje sie tez rodzicami",
-        "quote": "Poza dziecmi mam tu tez zdrowie rodzicow: wyniki, leki, wizyty. Wreszcie nie musze pamietac wszystkiego z glowy."
+        "quote": "Dodaliśmy też dziadków — leki i wyniki w jednym miejscu. Zaskakująco wygodne w codzienności."
       },
       {
         "name": "Ewa S.",
         "role": "Mama 2 dzieci i dziadkowie w profilu",
-        "quote": "Dodalam dzieci i dziadkow w jednym miejscu. Latwo wrocic do historii i szybciej powiedziec lekarzowi, co bylo wczesniej."
+        "quote": "Kalendarz gorączki robi robotę. Widać od razu, jak często i jak wysoko rosła temperatura w miesiącu."
       }
     ]
   },
   "waitlist": {
-    "eyebrow": "Lista oczekujacych Android",
-    "title": "Dolacz do listy wczesnego dostepu",
-    "successTitle": "Dziekujemy!",
-    "successBody": "Damy Ci znac, gdy wersja Android bedzie gotowa.",
-    "successMeta": "Twoj email zostal dodany do listy oczekujacych MediBoo.",
-    "closeAria": "Zamknij formularz listy oczekujacych",
-    "emailLabel": "Adres email",
+    "eyebrow": "Android — lista oczekujących",
+    "title": "Zapisz się po wcześniejszy dostęp",
+    "successTitle": "Gotowe!",
+    "successBody": "Damy znać, gdy wersja na Androida będzie gotowa.",
+    "successMeta": "Twój e‑mail jest na liście oczekujących MediBoo.",
+    "closeAria": "Zamknij formularz zapisu",
+    "emailLabel": "Adres e‑mail",
     "emailPlaceholder": "twoj@email.com",
-    "consent": "Zgadzam sie otrzymywac aktualizacje dotyczace premiery wersji Android.",
-    "submit": "Dolacz do listy",
-    "submitting": "Wysylanie...",
-    "error": "Nie udalo sie zapisac. Sprobuj ponownie za chwile."
+    "consent": "Wyrażam zgodę na otrzymywanie informacji o starcie wersji na Androida.",
+    "submit": "Zapisz mnie",
+    "submitting": "Wysyłanie…",
+    "error": "Nie udało się zapisać. Spróbuj ponownie za chwilę."
   },
   "footer": {
-    "description": "Spokojne narzedzia do zarzadzania rutynami pediatrycznymi, codziennymi objawami i praktycznymi follow-upami z mniejszym obciazeniem.",
+    "description": "MediBoo porządkuje objawy, gorączkę, leki i wizyty — z prywatnością na pierwszym miejscu (bez AI) i opcjonalną blokadą aplikacji (PIN/biometria).",
     "privacy": "Polityka prywatnosci",
     "terms": "Regulamin",
     "deleteData": "Usun dane",
@@ -144,18 +144,18 @@
     }
   },
   "deleteData": {
-    "eyebrow": "Usun dane",
-    "title": "Popros o trwale usuniecie danych",
-    "description": "Uzyj tego formularza, aby poprosic o usuniecie danych konta MediBoo. Mozemy skontaktowac sie z Toba, aby zweryfikowac wlasciciela przed zakonczeniem procesu.",
-    "note": "Podaj email uzywany w aplikacji oraz wystarczajacy kontekst, aby zidentyfikowac konto.",
-    "successTitle": "Prosba odebrana",
-    "successBody": "Przeanalizujemy prosbe i skontaktujemy sie na podany adres email.",
+    "eyebrow": "Usuwanie danych",
+    "title": "Poproś o trwałe usunięcie danych",
+    "description": "Wypełnij formularz, aby poprosić o usunięcie danych konta MediBoo. Możemy skontaktować się z Tobą, aby potwierdzić własność konta przed zakończeniem procesu.",
+    "note": "Podaj e‑mail używany w aplikacji oraz informacje, które pomogą nam zidentyfikować konto.",
+    "successTitle": "Prośba przyjęta",
+    "successBody": "Zweryfikujemy zgłoszenie i odezwiemy się na podany e‑mail.",
     "nameLabel": "Imie i nazwisko",
     "emailLabel": "Email konta",
     "messageLabel": "Szczegoly prosby",
-    "messagePlaceholder": "Prosze usunac wszystkie dane konta powiazane z tym adresem email.",
-    "submit": "Wyslij prosbe",
-    "submitting": "Wysylanie...",
-    "error": "Nie udalo sie wyslac formularza. Sprobuj ponownie."
+    "messagePlaceholder": "Proszę o usunięcie wszystkich danych konta powiązanych z tym adresem e‑mail.",
+    "submit": "Wyślij prośbę",
+    "submitting": "Wysyłanie…",
+    "error": "Nie udało się wysłać formularza. Spróbuj ponownie."
   }
 }
