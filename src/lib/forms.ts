@@ -1,8 +1,6 @@
 export const formProvider = {
-  endpoint:
-    process.env.NEXT_PUBLIC_FORMS_ENDPOINT || "https://api.staticforms.xyz/submit",
-  accessKey:
-    process.env.NEXT_PUBLIC_STATICFORMS_ACCESS_KEY || "YOUR_STATICFORMS_ACCESS_KEY",
+  endpoint: "https://api.staticforms.xyz/submit",
+  accessKey: "sf_j85b4hi9jn81gnk3g3hgfibf",
 };
 
 export const honeypotFieldName = "company";

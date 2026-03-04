@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { formProvider, honeypotFieldName } from "@/lib/forms";
 import { trackEvent } from "@/lib/analytics";
 import type { Dictionary } from "@/i18n";
+import { SuccessModal } from "@/components/SuccessModal";
 
 interface WaitlistModalProps {
   open: boolean;
@@ -11,13 +12,15 @@ interface WaitlistModalProps {
   t: Dictionary["waitlist"];
 }
 
+const waitlistFormSubject = "MediBoo — Android Waitlist";
+
 export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!open) {
+    if (!open || isSubmitted) {
       return;
     }
 
@@ -35,7 +38,7 @@ export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open, onClose]);
+  }, [open, onClose, isSubmitted]);
 
   useEffect(() => {
     if (!open) {
@@ -49,6 +52,28 @@ export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>
     return null;
   }
 
+  const handleSuccessClose = () => {
+    onClose();
+  };
+
+  if (isSubmitted) {
+    return (
+      <SuccessModal
+        open
+        title={t.successTitle}
+        message={t.successBody}
+        closeLabel={t.successClose}
+        closeAriaLabel={t.closeAria}
+        secondaryLabel={t.successBackHome}
+        onClose={handleSuccessClose}
+        onSecondary={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          handleSuccessClose();
+        }}
+      />
+    );
+  }
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -56,10 +81,14 @@ export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const email = String(formData.get("email") ?? "").trim();
+    formData.set("accessKey", formProvider.accessKey);
+    formData.set("subject", waitlistFormSubject);
+    formData.set("replyTo", email);
 
     try {
-      const response = await fetch(form.action, {
-        method: form.method,
+      const response = await fetch(formProvider.endpoint, {
+        method: "POST",
         body: formData,
         headers: {
           Accept: "application/json",
@@ -101,7 +130,7 @@ export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>
               id="waitlist-modal-title"
               className="mt-2 text-2xl font-semibold tracking-tight text-primary"
             >
-              {isSubmitted ? t.successTitle : t.title}
+              {t.title}
             </h2>
           </div>
           <button
@@ -114,68 +143,59 @@ export function WaitlistModal({ open, onClose, t }: Readonly<WaitlistModalProps>
           </button>
         </div>
 
-        {isSubmitted ? (
-          <div className="mt-6 rounded-md bg-secondary/60 p-4">
-            <p className="text-base font-medium text-primary">{t.successBody}</p>
-            <p className="mt-2 text-sm leading-7 text-muted-text">
-              {t.successMeta}
-            </p>
+        <form
+          action={formProvider.endpoint}
+          method="post"
+          className="mt-6 space-y-4"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="accessKey" value={formProvider.accessKey} />
+          <input type="hidden" name="subject" value={waitlistFormSubject} />
+          <input type="hidden" name="formName" value="android_waitlist" />
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="waitlist-company">Company</label>
+            <input id="waitlist-company" type="text" name={honeypotFieldName} tabIndex={-1} />
           </div>
-        ) : (
-          <form
-            action={formProvider.endpoint}
-            method="post"
-            className="mt-6 space-y-4"
-            onSubmit={handleSubmit}
-          >
-            <input type="hidden" name="accessKey" value={formProvider.accessKey} />
-            <input type="hidden" name="subject" value="MediBoo Android waitlist" />
-            <input type="hidden" name="formName" value="android_waitlist" />
-            <div className="hidden" aria-hidden="true">
-              <label htmlFor="waitlist-company">Company</label>
-              <input id="waitlist-company" type="text" name={honeypotFieldName} tabIndex={-1} />
-            </div>
 
-            <div>
-              <label
-                htmlFor="waitlist-email"
-                className="mb-2 block text-sm font-medium text-primary"
-              >
-                {t.emailLabel}
-              </label>
-              <input
-                id="waitlist-email"
-                type="email"
-                name="email"
-                required
-                autoComplete="email"
-                className="w-full rounded-md border border-border bg-white px-4 py-3 text-base text-primary outline-none ring-0 placeholder:text-muted-text/70 focus:border-primary"
-                placeholder={t.emailPlaceholder}
-              />
-            </div>
-
-            <label className="flex items-start gap-3 rounded-md bg-background px-4 py-3 text-sm leading-6 text-muted-text">
-              <input
-                type="checkbox"
-                name="consent"
-                value="yes"
-                required
-                className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent"
-              />
-              <span>{t.consent}</span>
-            </label>
-
-            {error ? <p className="text-sm text-error">{error}</p> : null}
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-base font-semibold text-white shadow-card hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
+          <div>
+            <label
+              htmlFor="waitlist-email"
+              className="mb-2 block text-sm font-medium text-primary"
             >
-              {isSubmitting ? t.submitting : t.submit}
-            </button>
-          </form>
-        )}
+              {t.emailLabel}
+            </label>
+            <input
+              id="waitlist-email"
+              type="email"
+              name="email"
+              required
+              autoComplete="email"
+              className="w-full rounded-md border border-border bg-white px-4 py-3 text-base text-primary outline-none ring-0 placeholder:text-muted-text/70 focus:border-primary"
+              placeholder={t.emailPlaceholder}
+            />
+          </div>
+
+          <label className="flex items-start gap-3 rounded-md bg-background px-4 py-3 text-sm leading-6 text-muted-text">
+            <input
+              type="checkbox"
+              name="consent"
+              value="yes"
+              required
+              className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent"
+            />
+            <span>{t.consent}</span>
+          </label>
+
+          {error ? <p className="text-sm text-error">{error}</p> : null}
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-base font-semibold text-white shadow-card hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            {isSubmitting ? t.submitting : t.submit}
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -60,16 +60,20 @@ export function Testimonials({ t }: Readonly<TestimonialsProps>) {
           ))}
         </div>
 
-        <div className="hidden lg:flex lg:flex-col lg:gap-5">
-          <div className="grid grid-cols-3 justify-items-center gap-5">
+        <div className="hidden lg:flex lg:flex-col lg:items-center lg:gap-5">
+          <div className="flex justify-center gap-5">
             {t.items.slice(0, 3).map((testimonial) => (
-              <TestimonialCard key={testimonial.name} {...testimonial} />
+              <div key={testimonial.name} className="w-[clamp(16rem,29vw,22rem)]">
+                <TestimonialCard {...testimonial} />
+              </div>
             ))}
           </div>
 
           <div className="flex justify-center gap-5">
             {t.items.slice(3).map((testimonial) => (
-              <TestimonialCard key={testimonial.name} {...testimonial} />
+              <div key={testimonial.name} className="w-[clamp(16rem,29vw,22rem)]">
+                <TestimonialCard {...testimonial} />
+              </div>
             ))}
           </div>
         </div>
