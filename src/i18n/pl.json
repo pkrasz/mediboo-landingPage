@@ -4,7 +4,7 @@
   },
   "site": {
     "productName": "MediBoo",
-    "tagline": "Spokojny dziennik zdrowia na iOS"
+    "tagline": "Mobilny dziennik zdrowia dla całej rodziny"
   },
   "nav": {
     "features": "Funkcje",
@@ -23,7 +23,7 @@
     "chips": [
       "Prywatność: brak modeli AI na danych zdrowia",
       "Blokada aplikacji: PIN lub Face ID / Touch ID",
-      "Kalendarz gorączki z kolorami temperatur"
+      "Kalendarz z kolorami poziomu gorączki"
     ],
     "features": {
       "preTitle": "Funkcje",
@@ -66,7 +66,7 @@
         },
         {
           "question": "Jak dbacie o prywatność danych zdrowotnych?",
-          "answer": "MediBoo nie używa modeli AI do uczenia się na wpisach zdrowotnych. Dodatkowo możesz włączyć blokadę aplikacji: PIN lub biometrię urządzenia."
+          "answer": "MediBoo nie używa żadnych modeli AI do uczenia się na wpisach zdrowotnych. Dodatkowo aplikacja posiada blokadę: PIN lub biometrię urządzenia. Nie zbieramy danych identyfikujących użytkowników, np. imienia i nazwiska."
         },
         {
           "question": "Na jakich wytycznych opiera się kalkulator dawek przeciwgorączkowych?",
@@ -90,12 +90,12 @@
         "quote": "Przy gorączce wszystko mieszało mi się w głowie. Teraz mam godzinę po godzinie: temperatura, lek, objawy. Mega ulga."
       },
       {
-        "name": "Bartek C.",
+        "name": "Daniel M.",
         "role": "Tata 2 dzieci",
-        "quote": "Najlepsze są przypomnienia o dawkach i to, że oboje z żoną widzimy tę samą historię bez przeklejania wiadomości."
+        "quote": "Najlepsze są przypomnienia o dawkach i to, że mam całą historię w jednym miejscu — bez szukania w notatkach i wiadomościach."
       },
       {
-        "name": "Kasia W.",
+        "name": "Sofia R.",
         "role": "Mama 4 dzieci",
         "quote": "Do lekarza idę z gotowymi notatkami i pytaniami. W końcu nie zapominam o połowie rzeczy w stresie."
       },
@@ -105,9 +105,9 @@
         "quote": "Dodaliśmy też dziadków — leki i wyniki w jednym miejscu. Zaskakująco wygodne w codzienności."
       },
       {
-        "name": "Ewa S.",
+        "name": "Emma L.",
         "role": "Mama 2 dzieci i dziadkowie w profilu",
-        "quote": "Kalendarz gorączki robi robotę. Widać od razu, jak często i jak wysoko rosła temperatura w miesiącu."
+        "quote": "Kalendarz robi robotę. Od razu widać, jak często i jak wysoko rosła temperatura w danym miesiącu."
       }
     ]
   },
@@ -126,7 +126,7 @@
     "error": "Nie udało się zapisać. Spróbuj ponownie za chwilę."
   },
   "footer": {
-    "description": "MediBoo porządkuje objawy, gorączkę, leki i wizyty — z prywatnością na pierwszym miejscu (bez AI) i opcjonalną blokadą aplikacji (PIN/biometria).",
+    "description": "MediBoo porządkuje objawy, gorączkę, leki i wizyty — z prywatnością na pierwszym miejscu (bez AI) oraz blokadą aplikacji (PIN/biometria).",
     "privacy": "Polityka prywatnosci",
     "terms": "Regulamin",
     "deleteData": "Usun dane",
