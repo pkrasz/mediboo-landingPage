@@ -1,21 +1,49 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { formProvider, honeypotFieldName } from "@/lib/forms";
 import type { Dictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
+import { getLocaleAssets } from "@/lib/assets";
 import { SuccessModal } from "@/components/SuccessModal";
 
 interface DeleteDataFormProps {
   t: Dictionary["deleteData"];
+  locale: Locale;
 }
 
 const deleteDataFormSubject = "MediBoo — Data Deletion Request";
 
-export function DeleteDataForm({ t }: Readonly<DeleteDataFormProps>) {
+export function DeleteDataForm({ t, locale }: Readonly<DeleteDataFormProps>) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [isInstructionModalOpen, setIsInstructionModalOpen] = useState(false);
   const [error, setError] = useState("");
+  const assets = getLocaleAssets(locale);
+
+  useEffect(() => {
+    if (!isInstructionModalOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsInstructionModalOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isInstructionModalOpen]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -114,17 +142,27 @@ export function DeleteDataForm({ t }: Readonly<DeleteDataFormProps>) {
                 type="email"
                 name="email"
                 autoComplete="email"
+                required
                 className="w-full rounded-md border border-border bg-white px-4 py-3 text-base text-primary outline-none focus:border-primary"
               />
             </div>
 
             <div>
-              <label
-                htmlFor="delete-user-id"
-                className="mb-2 block text-sm font-medium text-primary"
-              >
-                {t.userIdLabel}
-              </label>
+              <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                <label
+                  htmlFor="delete-user-id"
+                  className="text-sm font-medium text-primary"
+                >
+                  {t.userIdLabel}
+                </label>
+                <button
+                  type="button"
+                  onClick={() => setIsInstructionModalOpen(true)}
+                  className="text-sm font-medium text-primary/75 underline decoration-primary/30 underline-offset-4 transition hover:text-primary hover:decoration-primary motion-reduce:transition-none"
+                >
+                  {t.instructionTrigger}
+                </button>
+              </div>
               <input
                 id="delete-user-id"
                 type="text"
@@ -164,6 +202,52 @@ export function DeleteDataForm({ t }: Readonly<DeleteDataFormProps>) {
           </form>
         </div>
       </div>
+      {isInstructionModalOpen ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-sm"
+          onClick={() => setIsInstructionModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="user-id-instruction-title"
+        >
+          <div
+            className="w-full max-w-lg rounded-md bg-white p-5 shadow-modal md:p-6"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2
+                  id="user-id-instruction-title"
+                  className="text-2xl font-semibold tracking-tight text-primary"
+                >
+                  {t.instructionTitle}
+                </h2>
+                <p className="mt-3 max-w-[36rem] text-base leading-7 text-muted-text">
+                  {t.instructionDescription}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsInstructionModalOpen(false)}
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-background text-primary hover:bg-secondary"
+                aria-label={t.instructionCloseAria}
+              >
+                <span className="text-xl leading-none">x</span>
+              </button>
+            </div>
+
+            <div className="mt-5 overflow-hidden rounded-md border border-border bg-background/70">
+              <Image
+                src={assets.userIdInstructionImage}
+                alt={t.instructionTitle}
+                width={1260}
+                height={798}
+                className="mx-auto h-auto w-full max-w-[420px]"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
       <SuccessModal
         open={isSuccessModalOpen}
         title={t.successTitle}

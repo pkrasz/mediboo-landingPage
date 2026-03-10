@@ -1,133 +1,133 @@
 {
   "metadata": {
-    "siteDescription": "MediBoo is a family health journal: symptoms, fever, medications, doctor visits, and test results — organized in one calm timeline."
+    "siteDescription": "MediBoo is a health journal for the whole family: symptoms, fever, medications, doctor visits, and test results all in one place, always within reach."
   },
   "site": {
     "productName": "MediBoo",
-    "tagline": "Calm family health journal on iOS"
+    "tagline": "Mobile health journal for the whole family"
   },
   "nav": {
     "features": "Features",
     "howItWorks": "How it works",
-    "testimonials": "Opinions",
+    "testimonials": "Reviews",
     "faq": "FAQ",
     "languageLabel": "Language"
   },
   "landing": {
-    "eyebrow": "A simple health journal for the whole family",
-    "title": "Track symptoms, fever, and medications — clearly, with timestamps.",
-    "description": "Capture symptoms with date and time, set medication schedules with reminders, save doctor visit notes and attachments, and keep test results per profile — for kids, adults, or anyone you care for.",
+    "eyebrow": "A health journal that brings order to treatment",
+    "title": "Symptoms, fever, and medications recorded clearly, without the chaos.",
+    "description": "Add entries with date and time, set medication schedules with reminders, save visits, questions for the doctor, and attachments. Everything stays separate for each family profile.",
     "appStoreAria": "Download on the App Store",
     "googlePlayAria": "Join Google Play waitlist",
-    "appPreviewAlt": "MediBoo app preview — family health journal and fever calendar",
+    "appPreviewAlt": "MediBoo app preview: health journal and fever calendar",
     "chips": [
-      "Privacy-first: no AI training on your health data",
-      "App Lock with PIN or device biometrics",
-      "Fever calendar with clear color cues"
+      "Privacy first: no AI models trained on health data",
+      "App lock with PIN or Face ID / Touch ID",
+      "Calendar with fever-level color coding"
     ],
     "features": {
       "preTitle": "Features",
-      "title": "Everything you need in one health timeline.",
-      "description": "MediBoo keeps illness history readable: symptoms, doses, visits, and results — built to be fast, calm, and safe to use.",
+      "title": "A health history you can actually keep under control.",
+      "description": "MediBoo helps you track the course of illness and treatment over time: symptoms, medication doses, visits, and test results. Simple, clear, and focused on keeping data safe.",
       "cards": [
         {
-          "title": "Symptoms & illness history",
-          "body": "Log cough, runny nose, pain, fever and more with precise timestamps to see the full course of illness."
+          "title": "Symptom and illness journal",
+          "body": "Record a runny nose, cough, pain, fever, and other symptoms with the exact time, so it is easy to reconstruct how the illness progressed."
         },
         {
-          "title": "Medication schedules + reminders",
-          "body": "Plan treatment duration and daily doses, then rely on device notifications to stay consistent."
+          "title": "Treatment schedule and reminders",
+          "body": "Set the medication name, treatment period, and number of doses per day. Your phone will remind you when it is time to give the next dose."
         },
         {
-          "title": "Visits, notes, attachments, results",
-          "body": "Write questions for the doctor, store visit notes, attach photos/PDFs, and keep test results and vaccinations together per profile."
+          "title": "Visits, doctors, clinics, and attachments",
+          "body": "Add the reason for the visit, a list of questions, notes, and photos or PDFs. The app remembers doctors and clinics so future visits are quicker to add."
         }
       ]
     },
     "howItWorks": {
       "preTitle": "How it works",
-      "title": "Three steps to keep care under control.",
-      "description": "Add quick entries during the day. When you need a follow-up, you have a clear story ready to share.",
+      "title": "Three steps that bring calm during illness.",
+      "description": "Entries take just a few seconds. When it is time for a visit or consultation, you have the full history ready, without guessing.",
       "stepLabel": "Step",
       "items": [
-        "Pick a profile and log symptoms or temperature in seconds (date and time included).",
-        "Record a medication dose or create a schedule with reminders.",
-        "Bring visit notes, questions, attachments, and a clear calendar view into appointments."
+        "Choose a profile (child, adult, or pet) and add symptoms or temperature with the date and time.",
+        "Record a medication or set up a treatment schedule with dose reminders.",
+        "Prepare for the visit with questions for the doctor, notes, attachments, and a quick calendar overview of the history."
       ]
     },
     "faq": {
       "preTitle": "FAQ",
-      "title": "Common questions",
-      "description": "Quick answers about profiles, privacy, and the dose calculator source.",
+      "title": "Frequently asked questions",
+      "description": "Below are answers about availability, privacy, and the fever dose calculator.",
       "items": [
         {
-          "question": "Can I use MediBoo for more than one person?",
-          "answer": "Yes. Create multiple profiles for kids, adults, and anyone you want to track. Each profile has its own separate health history."
+          "question": "Does MediBoo work for the whole family?",
+          "answer": "Yes. You can manage multiple profiles for children, adults, and even pets. Each profile has its own separate health history."
         },
         {
-          "question": "How do you protect sensitive health data?",
-          "answer": "MediBoo does not use AI models to learn from your health entries. You can also enable App Lock with a PIN or device biometrics."
+          "question": "How do you protect health data privacy?",
+          "answer": "MediBoo does not use any AI models to learn from health entries. The app also includes App Lock with a PIN or device biometrics. We do not collect personally identifying data such as full name."
         },
         {
-          "question": "What is the fever dose calculator based on?",
-          "answer": "It uses weight-based dosing guidance (mg/kg). Source: World Health Organization (WHO), Pocket Book of Hospital Care for Children. It is informational and does not replace medical advice."
+          "question": "Which guidelines is the fever dose calculator based on?",
+          "answer": "The calculator uses weight-based dosing guidance (mg/kg). Source: World Health Organization (WHO), Pocket Book of Hospital Care for Children. This feature is for informational purposes only and does not replace medical advice."
         }
       ]
     },
     "cta": {
-      "title": "Start your family health journal today.",
-      "description": "Record faster. Worry less. Walk into appointments with a clear history."
+      "title": "Start keeping your health journal on your phone.",
+      "description": "Record things faster. Make calmer decisions. Have the full history ready for the next visit."
     }
   },
   "testimonials": {
-    "preTitle": "Testimonials",
-    "title": "Families say it reduces stress.",
-    "description": "A calmer routine, fewer forgotten details, and clearer doctor visits — that’s the common theme.",
+    "preTitle": "Reviews",
+    "title": "Parents say it saves nerves.",
+    "description": "In short: less trying to remember, more order. That is how MediBoo users describe it most often.",
     "items": [
       {
         "name": "Marta K.",
-        "role": "Mom of 3",
-        "quote": "During fever nights I used to lose track. Now I have timestamps for temperature, meds, and symptoms. Huge relief."
+        "role": "Mom of 3 children",
+        "quote": "When my kids had a fever, everything used to get mixed up in my head. Now I have it all hour by hour: temperature, medication, symptoms. Such a relief."
       },
       {
-        "name": "Bartek C.",
+        "name": "Daniel M.",
         "role": "Dad of 2",
-        "quote": "Reminders keep us consistent, and sharing the same history with my partner avoids confusion."
+        "quote": "The best part is the dose reminders and having the full history in one place, without digging through notes and messages."
       },
       {
-        "name": "Kasia W.",
+        "name": "Sofia R.",
         "role": "Mom of 4",
-        "quote": "Doctor visits are easier because I show a simple timeline instead of trying to remember everything."
+        "quote": "I go to the doctor with my notes and questions ready. I finally stop forgetting half the important things in the middle of stress."
       },
       {
         "name": "Michal P.",
         "role": "Also caring for parents",
-        "quote": "We also track grandparents’ meds and results. One app, multiple profiles, less mental load."
+        "quote": "We added grandparents too, so medications and test results are all in one place. Surprisingly convenient in daily life."
       },
       {
-        "name": "Ewa S.",
-        "role": "Mom of 2 plus grandparents in one profile",
-        "quote": "The fever calendar makes patterns obvious. It’s easy to answer ‘when did it start?’ with confidence."
+        "name": "Emma L.",
+        "role": "Mom of 2 children and grandparents in the app",
+        "quote": "The calendar is incredibly useful. You can instantly see how often and how high the fever went during a given month."
       }
     ]
   },
   "waitlist": {
     "eyebrow": "Android waitlist",
-    "title": "Join the early access list",
-    "successTitle": "You are all set",
-    "successBody": "Thanks! You’re on the Android waitlist.",
+    "title": "Sign up for early access",
+    "successTitle": "You're all set",
+    "successBody": "Thank you. You're now on the Android waitlist.",
     "successClose": "Close",
     "successBackHome": "Back to home",
     "closeAria": "Close waitlist form",
     "emailLabel": "Email address",
     "emailPlaceholder": "you@example.com",
     "consent": "I agree to receive launch updates about the Android release.",
-    "submit": "Join waitlist",
+    "submit": "Sign me up",
     "submitting": "Sending...",
     "error": "We could not save your request. Please try again in a moment."
   },
   "footer": {
-    "description": "Calm tools for managing pediatric routines, daily symptoms, and practical follow-ups with less mental overhead.",
+    "description": "MediBoo helps organize symptoms, fever, medications, and doctor visits with privacy first, no AI, and app lock with PIN or biometrics.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "deleteData": "Delete Data",
@@ -145,18 +145,22 @@
     }
   },
   "deleteData": {
-    "eyebrow": "Delete data",
+    "eyebrow": "Data deletion",
     "title": "Request permanent data deletion",
-    "description": "Use this form to request removal of your MediBoo account data. We may contact you to verify ownership before deletion is completed.",
-    "note": "Include the email used in the app and enough context for us to identify the account.",
+    "description": "Fill out this form to request deletion of your MediBoo account data. We may contact you to confirm account ownership before the process is completed.",
+    "note": "Provide the email address used in the app and any details that will help us identify the account.",
+    "instructionTrigger": "Where to find it?",
+    "instructionTitle": "Where can I find my User ID?",
+    "instructionDescription": "Open Settings in the MediBoo app. At the bottom-left of the screen you will see your identifier in the format: User ID: MB-xxxxxxxx",
+    "instructionCloseAria": "Close user ID instructions",
     "successTitle": "Request received",
-    "successBody": "Thanks! We received your request and will respond by email if needed.",
+    "successBody": "Thank you. We have received your request and will reply by email if needed.",
     "successClose": "Close",
     "successBackHome": "Back to home",
     "nameLabel": "Full name",
     "emailLabel": "Account email",
     "userIdLabel": "User ID",
-    "userIdPlaceholder": "Your app user ID",
+    "userIdPlaceholder": "Your user ID in the app",
     "messageLabel": "Request details",
     "messagePlaceholder": "Please delete all account data connected to this email address.",
     "submit": "Submit request",

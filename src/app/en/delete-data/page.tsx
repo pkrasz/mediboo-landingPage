@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishDeleteDataPage() {
-  return <DeleteDataForm t={dictionary.deleteData} />;
+  return <DeleteDataForm t={dictionary.deleteData} locale="en" />;
 }
