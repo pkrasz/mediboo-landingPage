@@ -204,14 +204,14 @@ export function DeleteDataForm({ t, locale }: Readonly<DeleteDataFormProps>) {
       </div>
       {isInstructionModalOpen ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/35 p-4 backdrop-blur-sm"
           onClick={() => setIsInstructionModalOpen(false)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="user-id-instruction-title"
         >
           <div
-            className="w-full max-w-lg rounded-md bg-white p-5 shadow-modal md:p-6"
+            className="flex max-h-[calc(100dvh-2rem)] w-full max-w-lg flex-col rounded-md bg-white p-5 shadow-modal md:p-6"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
@@ -222,9 +222,6 @@ export function DeleteDataForm({ t, locale }: Readonly<DeleteDataFormProps>) {
                 >
                   {t.instructionTitle}
                 </h2>
-                <p className="mt-3 max-w-[36rem] text-base leading-7 text-muted-text">
-                  {t.instructionDescription}
-                </p>
               </div>
               <button
                 type="button"
@@ -236,14 +233,20 @@ export function DeleteDataForm({ t, locale }: Readonly<DeleteDataFormProps>) {
               </button>
             </div>
 
-            <div className="mt-5 overflow-hidden rounded-md border border-border bg-background/70">
-              <Image
-                src={assets.userIdInstructionImage}
-                alt={t.instructionTitle}
-                width={1260}
-                height={798}
-                className="mx-auto h-auto w-full max-w-[420px]"
-              />
+            <div className="mt-5 min-h-0 flex-1 overflow-y-auto pr-1">
+              <p className="max-w-[36rem] text-base leading-7 text-muted-text">
+                {t.instructionDescription}
+              </p>
+
+              <div className="mt-5 overflow-hidden rounded-md border border-border bg-background/70">
+                <Image
+                  src={assets.userIdInstructionImage}
+                  alt={t.instructionTitle}
+                  width={1260}
+                  height={798}
+                  className="mx-auto h-auto w-full max-w-[420px]"
+                />
+              </div>
             </div>
           </div>
         </div>

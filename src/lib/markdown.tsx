@@ -1,11 +1,25 @@
-import { ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 
 function renderInline(text: string): ReactNode[] {
-  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).filter(Boolean);
+  const parts = text
+    .split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_|\[[^\]]+\]\([^)]+\))/g)
+    .filter(Boolean);
 
   return parts.map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
+    }
+
+    if (
+      ((part.startsWith("*") && part.endsWith("*")) ||
+        (part.startsWith("_") && part.endsWith("_"))) &&
+      part.length > 2
+    ) {
+      return (
+        <em key={`${part}-${index}`} className="text-sm italic text-muted-text">
+          {part.slice(1, -1)}
+        </em>
+      );
     }
 
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
@@ -28,7 +42,7 @@ function renderInline(text: string): ReactNode[] {
 export function renderMarkdown(markdown: string): ReactNode[] {
   const lines = markdown.split(/\r?\n/);
   const nodes: ReactNode[] = [];
-  let paragraph: string[] = [];
+  let paragraph: Array<{ text: string; breakAfter: boolean }> = [];
   let listItems: string[] = [];
   let listType: "ul" | "ol" | null = null;
 
@@ -37,10 +51,15 @@ export function renderMarkdown(markdown: string): ReactNode[] {
       return;
     }
 
-    const content = paragraph.join(" ");
     nodes.push(
       <p key={`p-${nodes.length}`} className="text-base leading-8 text-muted-text">
-        {renderInline(content)}
+        {paragraph.map((line, index) => (
+          <Fragment key={`${line.text}-${index}`}>
+            {renderInline(line.text)}
+            {index < paragraph.length - 1 &&
+              (line.breakAfter ? <br /> : " ")}
+          </Fragment>
+        ))}
       </p>,
     );
     paragraph = [];
@@ -116,7 +135,10 @@ export function renderMarkdown(markdown: string): ReactNode[] {
     }
 
     flushList();
-    paragraph.push(trimmed);
+    paragraph.push({
+      text: trimmed.replace(/(?:\\\\| {2,})$/, ""),
+      breakAfter: /(?:\\\\| {2,})$/.test(line),
+    });
   }
 
   flushParagraph();
