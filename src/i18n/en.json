@@ -128,6 +128,7 @@
   },
   "footer": {
     "description": "MediBoo helps organize symptoms, fever, medications, and doctor visits with privacy first, no AI, and app lock with PIN or biometrics.",
+    "support": "Support",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "deleteData": "Delete Data",
@@ -166,5 +167,17 @@
     "submit": "Submit request",
     "submitting": "Sending...",
     "error": "We could not send the form. Please try again."
+  },
+  "support": {
+    "eyebrow": "Support",
+    "title": "Need help with MediBoo?",
+    "description": "If you have a question about the app, your account, or family health journal data, we are happy to help.",
+    "emailLabel": "Support email",
+    "faqLabel": "FAQ",
+    "faqDescription": "Find quick answers about privacy, app availability, and core features.",
+    "privacyLabel": "Privacy Policy",
+    "privacyDescription": "Read how MediBoo handles personal data and health-related records.",
+    "termsLabel": "Terms of Use",
+    "termsDescription": "Review the rules for using the MediBoo website and mobile app."
   }
 }

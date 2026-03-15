@@ -2,14 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import { getDictionary } from "@/i18n";
+import { HOME_DESCRIPTION_EN, HOME_TITLE_EN, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: {
-    default: "MediBoo",
-    template: "%s | MediBoo",
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  title: HOME_TITLE_EN,
+  description: HOME_DESCRIPTION_EN,
+  alternates: {
+    canonical: SITE_URL,
   },
-  description: getDictionary("en").metadata.siteDescription,
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

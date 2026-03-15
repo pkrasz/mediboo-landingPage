@@ -128,6 +128,7 @@
   },
   "footer": {
     "description": "MediBoo porządkuje objawy, gorączkę, leki i wizyty — z prywatnością na pierwszym miejscu (bez AI) oraz blokadą aplikacji (PIN/biometria).",
+    "support": "Wsparcie",
     "privacy": "Polityka prywatnosci",
     "terms": "Regulamin",
     "deleteData": "Usun dane",
@@ -166,5 +167,17 @@
     "submit": "Wyślij prośbę",
     "submitting": "Wysyłanie…",
     "error": "Nie udało się wysłać formularza. Spróbuj ponownie."
+  },
+  "support": {
+    "eyebrow": "Wsparcie",
+    "title": "Potrzebujesz pomocy z MediBoo?",
+    "description": "Jeśli masz pytanie o aplikację, konto albo dane w dzienniku zdrowia rodziny, chętnie pomożemy.",
+    "emailLabel": "E-mail wsparcia",
+    "faqLabel": "FAQ",
+    "faqDescription": "Znajdź szybkie odpowiedzi o prywatności, dostępności aplikacji i najważniejszych funkcjach.",
+    "privacyLabel": "Polityka prywatności",
+    "privacyDescription": "Sprawdź, jak MediBoo przetwarza dane osobowe i informacje związane ze zdrowiem.",
+    "termsLabel": "Regulamin",
+    "termsDescription": "Przeczytaj zasady korzystania ze strony internetowej i aplikacji MediBoo."
   }
 }

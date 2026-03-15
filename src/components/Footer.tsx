@@ -25,6 +25,12 @@ export function Footer({ locale, t }: Readonly<FooterProps>) {
 
           <div className="flex flex-wrap gap-2 md:justify-end">
             <Link
+              href={withLocalePrefix(locale, "/support")}
+              className="rounded-md px-3 py-2 text-sm text-muted-text hover:bg-background hover:text-primary"
+            >
+              {t.footer.support}
+            </Link>
+            <Link
               href={withLocalePrefix(locale, "/privacy")}
               className="rounded-md px-3 py-2 text-sm text-muted-text hover:bg-background hover:text-primary"
             >
