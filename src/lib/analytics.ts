@@ -8,7 +8,11 @@ declare global {
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 
 export function trackEvent(
-  eventName: "app_store_click" | "google_play_click" | "waitlist_submit",
+  eventName:
+    | "android_waitlist_click"
+    | "app_store_click"
+    | "google_play_click"
+    | "waitlist_submit",
   params?: Record<string, unknown>,
 ) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") {

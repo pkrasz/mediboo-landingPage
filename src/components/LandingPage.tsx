@@ -26,6 +26,19 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
     trackEvent("google_play_click", { destination: "waitlist_modal" });
   };
 
+  const openHeroWaitlistModal = () => {
+    trackEvent("android_waitlist_click", { location: "hero", locale });
+    openModal();
+  };
+
+  const trackHeroAppStoreClick = () => {
+    trackEvent("app_store_click", { location: "hero", locale });
+  };
+
+  const trackCtaAppStoreClick = () => {
+    trackEvent("app_store_click", { location: "cta", locale });
+  };
+
   return (
     <>
       <Container className="py-10 md:py-16">
@@ -46,7 +59,7 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
                 href="https://apps.apple.com/"
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => trackEvent("app_store_click", { destination: "app_store" })}
+                onClick={trackHeroAppStoreClick}
                 className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
                 aria-label={landing.appStoreAria}
               >
@@ -62,7 +75,7 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
 
               <button
                 type="button"
-                onClick={openModal}
+                onClick={openHeroWaitlistModal}
                 className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
                 aria-label={landing.googlePlayAria}
               >
@@ -177,10 +190,10 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
             <a
               href="https://apps.apple.com/"
               target="_blank"
-                rel="noreferrer"
-                onClick={() => trackEvent("app_store_click", { destination: "app_store" })}
-                className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
-                aria-label={landing.appStoreAria}
+              rel="noreferrer"
+              onClick={trackCtaAppStoreClick}
+              className="inline-flex rounded-md shadow-card transition-opacity hover:opacity-90"
+              aria-label={landing.appStoreAria}
             >
               <Image
                 src={assets.appStoreBadge}
