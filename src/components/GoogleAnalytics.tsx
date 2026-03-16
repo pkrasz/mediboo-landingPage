@@ -1,29 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import { GA_MEASUREMENT_ID, isAnalyticsEnabled, trackPageView } from "@/lib/analytics";
 
 export function GoogleAnalytics() {
   const pathname = usePathname();
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID || typeof window === "undefined" || typeof window.gtag !== "function") {
+    if (!isReady) {
       return;
     }
 
     const search = window.location.search;
     const pagePath = search ? `${pathname}?${search}` : pathname;
+    trackPageView(pagePath);
+  }, [isReady, pathname]);
 
-    window.gtag("event", "page_view", {
-      page_path: pagePath,
-      page_location: window.location.href,
-      page_title: document.title,
-    });
-  }, [pathname]);
-
-  if (!GA_MEASUREMENT_ID) {
+  if (!isAnalyticsEnabled) {
     return null;
   }
 
@@ -33,7 +29,7 @@ export function GoogleAnalytics() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
-      <Script id="ga4-init" strategy="afterInteractive">
+      <Script id="ga4-init" strategy="afterInteractive" onReady={() => setIsReady(true)}>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

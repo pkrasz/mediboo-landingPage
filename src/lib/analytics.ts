@@ -6,6 +6,33 @@ declare global {
 }
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
+export const isAnalyticsEnabled = Boolean(GA_MEASUREMENT_ID);
+
+function canTrackAnalytics() {
+  return (
+    isAnalyticsEnabled &&
+    typeof window !== "undefined" &&
+    typeof window.gtag === "function"
+  );
+}
+
+export function trackPageView(pagePath: string) {
+  if (!canTrackAnalytics()) {
+    return;
+  }
+
+  const gtag = window.gtag;
+
+  if (!gtag) {
+    return;
+  }
+
+  gtag("event", "page_view", {
+    page_path: pagePath,
+    page_location: window.location.href,
+    page_title: document.title,
+  });
+}
 
 export function trackEvent(
   eventName:
@@ -15,9 +42,15 @@ export function trackEvent(
     | "waitlist_submit",
   params?: Record<string, unknown>,
 ) {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+  if (!canTrackAnalytics()) {
     return;
   }
 
-  window.gtag("event", eventName, params);
+  const gtag = window.gtag;
+
+  if (!gtag) {
+    return;
+  }
+
+  gtag("event", eventName, params);
 }
