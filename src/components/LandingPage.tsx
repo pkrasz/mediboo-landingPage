@@ -54,7 +54,7 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
               {landing.description}
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
               <a
                 href="https://apps.apple.com/"
                 target="_blank"
