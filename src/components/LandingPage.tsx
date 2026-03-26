@@ -42,8 +42,8 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
   return (
     <>
       <Container className="py-10 md:py-16">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,42rem)_1fr] lg:items-center lg:gap-16 xl:gap-20">
-          <div className="max-w-2xl">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,36rem)_minmax(0,1fr)] lg:items-center lg:gap-10 xl:grid-cols-[minmax(0,38rem)_minmax(24rem,1fr)] xl:gap-12">
+          <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl">
             <div className="inline-flex rounded-sm bg-secondary px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               {landing.eyebrow}
             </div>
@@ -98,16 +98,16 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
             </div>
           </div>
 
-          <div className="relative lg:mx-auto lg:w-full lg:max-w-[290px] xl:max-w-[320px]">
-            <div className="absolute inset-x-8 bottom-8 top-8 rounded-[28px] bg-secondary/70 blur-3xl" />
-            <div className="relative flex justify-center lg:py-4">
+          <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] lg:mx-0 lg:justify-self-end lg:max-w-[500px] xl:max-w-[560px]">
+            <div className="absolute inset-x-3 bottom-6 top-6 rounded-[32px] bg-secondary/70 blur-3xl lg:inset-x-5 lg:bottom-6 lg:top-6 xl:inset-x-6 xl:bottom-8 xl:top-8" />
+            <div className="relative flex justify-center lg:justify-end">
               <Image
                 src={assets.heroImage}
                 alt={landing.appPreviewAlt}
                 width={1290}
                 height={2796}
                 priority
-                className="mx-auto h-auto w-full max-w-[250px] object-cover drop-shadow-[0_12px_30px_rgba(33,33,33,0.12)] sm:max-w-[280px] lg:max-w-[230px] xl:max-w-[250px]"
+                className="mx-auto h-auto w-full max-w-[300px] object-contain drop-shadow-[0_12px_30px_rgba(33,33,33,0.12)] sm:max-w-[340px] lg:mr-0 lg:max-w-[480px] xl:max-w-[530px]"
               />
             </div>
           </div>
