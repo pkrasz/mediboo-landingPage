@@ -9,5 +9,6 @@ export const HOME_DESCRIPTION_PL =
 export const OG_IMAGE_PATH = "/og-image.png";
 export const SUPPORT_EMAIL = "mediboo.apps@gmail.com";
 
-// TODO: Set NEXT_PUBLIC_APPLE_APP_ID when the App Store ID is available.
-export const APPLE_APP_STORE_ID = process.env.NEXT_PUBLIC_APPLE_APP_ID?.trim() || "";
+export const APPLE_APP_STORE_ID =
+  process.env.NEXT_PUBLIC_APPLE_APP_ID?.trim() || "6759815272";
+export const APPLE_APP_STORE_URL = `https://apps.apple.com/app/id${APPLE_APP_STORE_ID}`;

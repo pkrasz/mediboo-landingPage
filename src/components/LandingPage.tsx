@@ -10,6 +10,7 @@ import { WaitlistModal } from "@/components/WaitlistModal";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 import { getLocaleAssets } from "@/lib/assets";
+import { APPLE_APP_STORE_URL } from "@/lib/site";
 
 interface LandingPageProps {
   locale: Locale;
@@ -56,7 +57,7 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
 
             <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
               <a
-                href="https://apps.apple.com/"
+                href={APPLE_APP_STORE_URL}
                 target="_blank"
                 rel="noreferrer"
                 onClick={trackHeroAppStoreClick}
@@ -188,7 +189,7 @@ export function LandingPage({ locale, dictionary }: Readonly<LandingPageProps>) 
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="https://apps.apple.com/"
+              href={APPLE_APP_STORE_URL}
               target="_blank"
               rel="noreferrer"
               onClick={trackCtaAppStoreClick}
