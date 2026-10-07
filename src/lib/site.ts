@@ -12,3 +12,9 @@ export const SUPPORT_EMAIL = "mediboo.apps@gmail.com";
 export const APPLE_APP_STORE_ID =
   process.env.NEXT_PUBLIC_APPLE_APP_ID?.trim() || "6759815272";
 export const APPLE_APP_STORE_URL = `https://apps.apple.com/app/id${APPLE_APP_STORE_ID}`;
+
+// App Store Connect campaign tracking (provider token from ASC, mt=8 = iOS app).
+// `ct` (max 40 chars) identifies the source, e.g. "landing_hero_pl".
+export const APPLE_CAMPAIGN_PROVIDER_TOKEN = "128602784";
+export const appStoreCampaignUrl = (campaign: string) =>
+  `https://apps.apple.com/app/apple-store/id${APPLE_APP_STORE_ID}?pt=${APPLE_CAMPAIGN_PROVIDER_TOKEN}&ct=${encodeURIComponent(campaign.slice(0, 40))}&mt=8`;
